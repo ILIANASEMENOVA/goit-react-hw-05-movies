@@ -5,9 +5,9 @@ import Casts from './Cast/Cast';
 import Reviews from './Reviews/Reviews';
 import { lazy } from 'react';
 
-const Home = lazy(() => import('pages/Home'));
-const Movies = lazy(() => import('pages/Movies'));
-const MovieDetails = lazy(() => import('pages/MovieDetails'));
+const Home = lazy(() => import('pages/Home/Home'));
+const Movies = lazy(() => import('pages/Movies/Movies'));
+const MovieDetails = lazy(() => import('pages/MovieDetails/MovieDetails'));
 
 export const App = () => {
   return (
