@@ -8,6 +8,7 @@ import {
   ReviewList,
   ReviewTitle,
 } from './Reviews.styled';
+import Loader from 'components/Loader/Loader';
 
 const Reviews = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -34,6 +35,8 @@ const Reviews = () => {
 
   return (
     <div>
+      {isLoading && <Loader />}
+      {error && <p>error {error.message}</p>}
       {reviews.length > 0 && (
         <>
           <ReviewTitle>Reviews</ReviewTitle>

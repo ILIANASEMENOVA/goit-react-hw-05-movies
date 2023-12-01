@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieCast } from 'services/moviesApi';
 import { CastElement, CastGrid, CastPhoto, CastTitle } from './Cast.styled';
+import Loader from 'components/Loader/Loader';
 
 const Cast = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -29,6 +30,8 @@ const Cast = () => {
   return (
     <div>
       <CastTitle>Cast</CastTitle>
+      {isLoading && <Loader />}
+      {error && <p>error {error.message}</p>}
       {cast.length > 0 ? (
         <CastGrid>
           {cast?.map(item => {

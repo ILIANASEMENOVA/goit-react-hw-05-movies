@@ -2,7 +2,13 @@ import MoviesList from 'components/MoviesList/MoviesList';
 import React, { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMoviesByQuery } from 'services/moviesApi';
-import { BtnSearch, Input, SearchFormStyled } from './Movies.styled';
+import {
+  BtnSearch,
+  Input,
+  SearchFormStyled,
+  MoviesText,
+} from './Movies.styled';
+import Loader from 'components/Loader/Loader';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -54,10 +60,13 @@ const Movies = () => {
         <Input type="text" name="query" defaultValue={query} />
         <BtnSearch type="submit">Search</BtnSearch>
       </SearchFormStyled>
+      {isLoading && <Loader />}
+      {error && <p>error {error.message}</p>}
       <div>
-        {movies.length > 0 ? <MoviesList items={movies} /> : <div>sorry</div>}
+        <MoviesList items={movies} />
+
+        {movies.length === 0 && query && <MoviesText>sorry</MoviesText>}
       </div>
-      ;
     </div>
   );
 };

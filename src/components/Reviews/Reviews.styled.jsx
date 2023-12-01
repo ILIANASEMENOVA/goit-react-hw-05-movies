@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 export const ReviewTitle = styled.h2`
-  color: white;
+  color: #ffb6c1;
   margin-bottom: 20px;
 `;
 

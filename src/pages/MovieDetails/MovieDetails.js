@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
-import { fetchMovieById, fetchMovies } from 'services/moviesApi';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
+import { fetchMovieById } from 'services/moviesApi';
 import {
   GoBackButton,
   MovieInfoWrapper,
@@ -9,6 +9,7 @@ import {
   Poster,
   Ul,
 } from './MovieDetails.styled';
+import Loader from 'components/Loader/Loader';
 
 const MovieDetails = () => {
   const [movie, setMovie] = useState(null);
@@ -40,6 +41,8 @@ const MovieDetails = () => {
   return (
     <MovieWrapper>
       <GoBackButton to={backLinkRef.current}>Go back</GoBackButton>
+      {isLoading && <Loader />}
+      {error && <p>error {error.message}</p>}
       {movie !== null && (
         <MovieInfoWrapper>
           <Poster src={`https://image.tmdb.org/t/p/w300${movie.poster_path}`} />

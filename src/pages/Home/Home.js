@@ -1,3 +1,4 @@
+import Loader from 'components/Loader/Loader';
 import MoviesList from 'components/MoviesList/MoviesList';
 import React, { useEffect, useState } from 'react';
 import { fetchMovies } from 'services/moviesApi';
@@ -24,7 +25,13 @@ const Home = () => {
     getMovies();
   }, []);
 
-  return <div>{movies.length > 0 && <MoviesList items={movies} />}</div>;
+  return (
+    <div>
+      {isLoading && <Loader />}
+      {error && <p>error {error.message}</p>}
+      {movies.length > 0 && <MoviesList items={movies} />}
+    </div>
+  );
 };
 
 export default Home;

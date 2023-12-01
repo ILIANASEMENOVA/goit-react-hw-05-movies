@@ -37,7 +37,7 @@ export const MovieInfoWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   padding: 20px 0 0 0;
-  color: FFC0CB;
+  color: #c71585;
   gap: 20px;
 `;
 export const Ul = styled.ul`

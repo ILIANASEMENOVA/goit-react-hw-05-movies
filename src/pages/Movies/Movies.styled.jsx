@@ -39,3 +39,8 @@ export const BtnSearch = styled.button`
     border: 3px solid #ff69b4;
   }
 `;
+export const MoviesText = styled.h2`
+  color: pink;
+  margin-bottom: 20px;
+  text-align: center;
+`;
