@@ -5,6 +5,7 @@ export const HeaderStyled = styled.header`
   padding-top: 20px;
   padding-bottom: 20px;
   background-color: #ffb6c1;
+  min-height: 100vh;
 `;
 
 export const Wrapper = styled.div`
