@@ -5,6 +5,9 @@ export default function Loader() {
     <div
       style={{
         marginTop: '20px',
+
+        minWidth: 'calc(100vw - 140px)',
+
         display: 'flex',
         justifyContent: 'center',
       }}
@@ -16,7 +19,7 @@ export default function Loader() {
         ariaLabel="hourglass-loading"
         wrapperStyle={{}}
         wrapperClass=""
-        colors={['#306cce', '#72a1ed']}
+        colors={['#FF69B4', '#FF1493']}
       />
     </div>
   );
